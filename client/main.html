@@ -21,24 +21,28 @@
     </div>
   </nav> 
   <div class="container">
-    
-    <h1 class="text-center">All Students</h1>
-    <hr>
-    <table class="table table-responsive table-bordered">
-      <thead>
-        <tr>
-          <th class="text-center">Name</th>
-          <th class="text-center">Email</th>
-          <th class="text-center">Phone</th>
-          <th class="text-center">Date of Birth</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each students}}
-          {{> student}}
-        {{/each}}
-      </tbody>
-    </table>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        All Students
+      </div>
+      <div class="panel-body">
+        <table class="table table-responsive table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Date of Birth</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each students}}
+              {{> student}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   {{> stuAdd}}
