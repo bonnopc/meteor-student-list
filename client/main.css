@@ -7,6 +7,18 @@ body {
     z-index:1151 !important;
 }
 
-.panel{
+.container{
     background-color: #FDE3A7;
+    border-radius: 5px;
+    font-size: 125%;
+}
+
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.text-danger{
+    color: #F22613;
 }

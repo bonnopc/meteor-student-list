@@ -9,10 +9,10 @@ Template.body.helpers({
   },
 });
 
+// Bootstrap Datepicker
 Template.body.rendered=function() {
 	$('#birthday').datepicker({
     format: "dd-mm-yyyy",
-    startView: 3,
     multidate: false,
     autoclose: true,
   });
@@ -29,13 +29,13 @@ Template.stuAdd.events({
     const birthday = e.target.birthday.value;
 
     // Store values to DB
-    Students.insert({
+    let studentInfo = {
       name,
       email,
       phone,
-      birthday,
-      createdAt: new Date(),
-    });
+      birthday
+    };
+    Meteor.call('students.insert', studentInfo);
 
     // Reset form values
     e.target.name.value = "";
@@ -46,6 +46,14 @@ Template.stuAdd.events({
     // Close the modal
     $('#addStuModal').modal('toggle');
 
+    return false;
+  }
+});
+
+// Delete Student Info
+Template.student.events({
+  'click .deleteStu':function(){
+    Meteor.call('students.remove', this);
     return false;
   }
 });
