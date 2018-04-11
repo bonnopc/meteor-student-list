@@ -22,3 +22,8 @@ table {
 .text-danger{
     color: #F22613;
 }
+
+.notice{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}

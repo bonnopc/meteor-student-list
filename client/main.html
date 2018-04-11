@@ -24,25 +24,30 @@
   <div class="container">
     <h1 class="text-center">All Students</h1>
     <hr>
+    {{#if students.count}}
     <div class="table-responsive">
-
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date of Birth</th>
+            <th class="text-right">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each students}}
+            {{> student}}
+          {{/each}}
+        </tbody>
+      </table>
     </div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Date of Birth</th>
-          <th class="text-right">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each students}}
-          {{> student}}
-        {{/each}}
-      </tbody>
-    </table>
+    {{else}}
+      <div class="notice">
+        <center><h1><span class="glyphicon glyphicon-exclamation-sign"></span> No Record found!</h1><br>Add some student information first!!</center>
+      </div>
+    {{/if}}
   </div>
   
 
