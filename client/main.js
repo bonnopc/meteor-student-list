@@ -13,6 +13,8 @@ Template.body.helpers({
 Template.body.rendered=function() {
 	$('#birthday').datepicker({
     format: "dd-mm-yyyy",
+    endDate: "today",
+    startView: 2,
     multidate: false,
     autoclose: true,
   });
